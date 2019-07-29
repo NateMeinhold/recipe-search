@@ -116,7 +116,5 @@ li {
 a {
   color: #42b983;
 }
-.hello{
-  background-image: 
-}
+
 </style>
