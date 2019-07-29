@@ -1,29 +1,5 @@
-# recipe-search
+Recipe Search 
 
-## Project setup
-```
-npm install
-```
+Start with an ingredient you'd like to search, put it in the Search Bar. 
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Click "Search" and you're off to the races!
