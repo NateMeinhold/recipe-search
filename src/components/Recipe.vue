@@ -10,10 +10,15 @@
       <p>Find recipes related to: <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
     </form>
     
-    <ul class="results" v-if="results && results.length > 0">
+    <ul class="recipeCards" v-if="results && results.length > 0">
       
-      <li class="item" v-for="(item, index) of results" :key="index">
-        {{item}}
+      <li class="card" v-for="(item, index) of results" :key="index">
+       <!-- {{item}} -->
+        {{item.strMeal}}
+        <div id="thumbnail">
+        <!-- {{item.strMealThumb}} -->
+        <img :src="item.strMealThumb" :alt="item.strMealThumb" height="200" width="200">
+        </div>
       </li>
     </ul>
 
