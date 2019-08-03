@@ -13,16 +13,16 @@
     <ul class="recipeCards" v-if="results && results.length > 0">
       
       <li class="card" v-for="(item, index) of results" :key="index">
-       <!-- {{item}} -->
+       <!--the whole thing: {{item}} -->
+        <!--title TO DO: Make router link-->
         {{item.strMeal}}
+        <!-- Image Thumbnail-->
         <div id="thumbnail">
-        <!-- {{item.strMealThumb}} -->
-        <img :src="item.strMealThumb" :alt="item.strMealThumb" height="200" width="200">
+        <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200">
         </div>
       </li>
     </ul>
 
-    
     <div class="no-results" v-else-if="results && results.length === 0">
       <h2>No Recipes Found</h2>
       <p>Let's look for somthing else</p>
