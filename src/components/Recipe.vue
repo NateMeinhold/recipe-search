@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
 
-       <h2>Recipe Search</h2>
+       <h2>Recipe Search</h2>  
      <p>
        <!-- <router-link to="URL">What's for dinner?</router-link> -->
        </P>
@@ -15,7 +15,7 @@
       <li class="card" v-for="(item, index) of results" :key="index">
        <!--the whole thing: {{item}} -->
         <!--title TO DO: Make router link-->
-        {{item.strMeal}}
+        <button type="button" class="btn btn-secondary">{{item.strMeal}}</button>
         <!-- Image Thumbnail-->
         <div id="thumbnail">
         <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200">

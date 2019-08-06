@@ -10,7 +10,7 @@
       <p>Find recipes related to: <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
     </form>
     
-    <ul class="recipeCards" v-if="results && results.length > 0">
+    <ul class="Instructions" v-if="results && results.length > 0">
       
       <li class="card" v-for="(item, index) of results" :key="index">
        <!--the whole thing: {{item}} -->
@@ -38,7 +38,7 @@
 
 <script>
  import axios from 'axios'
-
+  //turn API call into {{}} mounted call for recipe
  export default {
       name: 'Recipe',
    data () {
