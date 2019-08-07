@@ -13,13 +13,16 @@
     <ul class="Instructions" v-if="results && results.length > 0">
       
       <li class="card" v-for="(item, index) of results" :key="index">
-       <!--the whole thing: {{item}} -->
-        <!--title TO DO: Make router link-->
-        {{item.strMeal}}
-        <!-- Image Thumbnail-->
+        <h1>{{item.strMeal}}</h1>
+        <h3>{{item.strCategory}} - {{item.strArea}}</h3>
         <div id="thumbnail">
         <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200">
         </div>
+        <ul>
+          <!--make list items to add ingredients {{item.strIngredient1}}-->
+          </ul>
+        <p> {{item.strInstructions}}</p>
+        <h3> link to Youtube </h3> 
       </li>
     </ul>
 
@@ -50,6 +53,7 @@
    }, 
    methods: {
    findRecipe: function() {
+    //  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
      axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
        params: {
         i: this.ingredient

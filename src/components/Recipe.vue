@@ -3,7 +3,7 @@
 
        <h2>Recipe Search</h2>  
      <p>
-       <!-- <router-link to="URL">What's for dinner?</router-link> -->
+       <router-link to="/reveal">What's for dinner?</router-link>
        </P>
        
     <form v-on:submit.prevent="findRecipe">
@@ -57,7 +57,7 @@
      })
      .then(response => {
        this.results = response.data.meals;
-       this.ingredient=" "
+       this.ingredient=""
      })
      .catch(error => {
        this.errors.push(error);
