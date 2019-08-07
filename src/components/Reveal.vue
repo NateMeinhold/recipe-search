@@ -53,7 +53,7 @@
    }, 
    methods: {
    findRecipe: function() {
-    //  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+    //  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata ...i think that "s" is the param this time
      axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
        params: {
         i: this.ingredient

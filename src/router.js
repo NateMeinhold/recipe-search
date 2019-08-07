@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Recipe from '@Recipe'
-import Reveal from '@Reveal'
+import Recipe from '@/Recipe'
+import Reveal from '@/Reveal'
 
 Vue.use(Router)
 
