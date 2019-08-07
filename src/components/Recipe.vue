@@ -14,7 +14,6 @@
       
       <li class="card" v-for="(item, index) of results" :key="index">
        <!--the whole thing: {{item}} -->
-        <!--title TO DO: Make router link-->
         <button type="button" class="btn btn-secondary">{{item.strMeal}}</button>
         <!-- Image Thumbnail-->
         <div id="thumbnail">
