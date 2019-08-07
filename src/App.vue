@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/veg.jpg">
+    <img alt="Veggie Image" src="./assets/veg.jpg">
     <Recipe msg=""/>
   </div>
 </template>
@@ -27,6 +27,8 @@ export default {
   margin-top: 60px;
 }
 body{
-  background-image: url('./assets/cut-board1.jpg')
+  background-image: url('./assets/cut-board1small.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 </style>
