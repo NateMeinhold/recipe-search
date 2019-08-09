@@ -3,11 +3,11 @@
 
        <h2>Recipe Reveal</h2>
      <p>
-       <!-- <router-link to="URL">What's for dinner?</router-link> -->
+       <router-link to="/">Home</router-link>
        </P>
        
     <form v-on:submit.prevent="findRecipe">
-      <p>Find recipes related to: <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
+      <p>Nothing here <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
     </form>
     
     <ul class="Instructions" v-if="results && results.length > 0">
@@ -40,6 +40,24 @@
 </template>
 
 <script>
+//import form the first page, then set params with mainly just title to pull in data from 1st call
+
+// import axios from "axios";
+// export default {
+//   name: "Meal",
+//   data () {
+//     return {
+//       posts: [],
+//       errors: [],
+//       blog: null,
+//       weather: null
+//     };
+//   },
+//   created () {
+//     this.item = this.$route.params.blog
+//     console.log(this.blog)
+
+
  import axios from 'axios'
   //turn API call into {{}} mounted call for recipe
  export default {

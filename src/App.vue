@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Veggie Image" src="./assets/veg.jpg">
-    <Recipe msg=""/>
+    
+     <router-view/>
   </div>
 </template>
 

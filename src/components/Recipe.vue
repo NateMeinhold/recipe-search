@@ -14,7 +14,7 @@
       
       <li class="card" v-for="(item, index) of results" :key="index">
        <!--the whole thing: {{item}} -->
-        <button type="button" class="btn btn-secondary">{{item.strMeal}}</button>
+        <button type="button" class="btn btn-secondary" v-on:click="getMeal(item)">{{item.strMeal}}</button>
         <!-- Image Thumbnail-->
         <div id="thumbnail">
         <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200">
@@ -48,6 +48,9 @@
      }
    }, 
    methods: {
+     getMeal: function(item) {
+       this.$router.push({name: "reveal", params: {item}})
+     },
    findRecipe: function() {
      axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
        params: {
