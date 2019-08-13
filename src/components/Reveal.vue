@@ -6,7 +6,7 @@
        <router-link to="/">Home</router-link>
        </P>
        
-    <form v-on:submit.prevent="findRecipe">
+    <form v-on:submit.prevent="findMeal">
       <p>Nothing here <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
     </form>
     
@@ -42,6 +42,7 @@
 <script>
 //import form the first page, then set params with mainly just title to pull in data from 1st call
 
+
 // import axios from "axios";
 // export default {
 //   name: "Meal",
@@ -61,7 +62,7 @@
  import axios from 'axios'
   //turn API call into {{}} mounted call for recipe
  export default {
-      name: 'Recipe',
+      name: 'Reveal',
    data () {
      return {
        results: null,
@@ -70,16 +71,16 @@
      }
    }, 
    methods: {
-   findRecipe: function() {
+   findMeal: function() {
     //  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata ...i think that "s" is the param this time
-     axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
+     axios.get('https://www.themealdb.com/api/json/v1/1/search.php', {
        params: {
-        i: this.ingredient
+        s: this.meal
        }
      })
      .then(response => {
        this.results = response.data.meals;
-       this.ingredient=" "
+       this.meal=""
      })
      .catch(error => {
        this.errors.push(error);
