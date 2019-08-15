@@ -21,12 +21,13 @@
         </div>
       </li>
     </ul>
+  
 
     <div class="no-results" v-else-if="results && results.length === 0">
       <h2>No Recipes Found</h2>
       <p>Let's look for somthing else</p>
     </div>
-
+<!--Need to ask about error message, it's not loading for some reason -->
     <ul class="errors" v-if="errors && errors.length > 0">
       <li v-for="(error, index) of errors" :key="index">
         {{error.message}}
@@ -49,7 +50,9 @@
    }, 
    methods: {
      getMeal: function(item) {
+       //when debuging {item} was recorded as "observer "
        this.$router.push({name: "reveal", params: {item}})
+       //I thought that the issue might've been in the push but changing item to item.srMeal didn't work
      },
    findRecipe: function() {
      axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
@@ -85,6 +88,22 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.recipeCards {
+   display: grid;
+  margin: 0 auto;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+  /* justify-items: center;  need to figure out how to center*/
+
+}
+
+.card{
+  background-image: url('paperTiny: NaNj;');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 </style>

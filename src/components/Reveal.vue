@@ -42,7 +42,7 @@
 <script>
 //import form the first page, then set params with mainly just title to pull in data from 1st call
 
-
+//colleen's example code:
 // import axios from "axios";
 // export default {
 //   name: "Meal",
@@ -60,7 +60,7 @@
 
 
  import axios from 'axios'
-  //turn API call into {{}} mounted call for recipe
+  //turn API call into {{}} mounted call for recipe...maybe
  export default {
       name: 'Reveal',
    data () {
@@ -75,8 +75,9 @@
     //  https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata ...i think that "s" is the param this time
      axios.get('https://www.themealdb.com/api/json/v1/1/search.php', {
        params: {
-        s: this.meal
+        s: this.item
        }
+       //from what I can tell in debuging...no data is being brought to this page. 
      })
      .then(response => {
        this.results = response.data.meals;
