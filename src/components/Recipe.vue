@@ -9,7 +9,7 @@
     <form v-on:submit.prevent="findRecipe">
       <p>Find recipes related to: <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
     </form>
-    
+    <section class="results">
     <ul class="recipeCards" v-if="results && results.length > 0">
       
       <li class="card" v-for="(item, index) of results" :key="index">
@@ -33,7 +33,9 @@
         {{error.message}}
       </li>
     </ul>
+    </section>
   </div>
+  
 </template>
 
 <script>
@@ -96,8 +98,13 @@ a {
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: minmax(150px, auto);
+  justify-content: center;
   /* justify-items: center;  need to figure out how to center*/
 
+}
+
+.results{
+  margin: 0 50px;
 }
 
 .card{
