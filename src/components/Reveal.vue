@@ -6,11 +6,11 @@
     </p>
 
     <form v-on:submit.prevent="findMeal">
-      <p>
+      <!-- <p>
         Nothing here
         <input type="text" v-model="ingredient" />
         <button type="submit">Search</button>
-      </p>
+      </p> -->
     </form>
 
     <ul class="Instructions" v-if="results && results.length > 0">
@@ -20,6 +20,7 @@
         <div id="thumbnail">
           <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200" />
         </div>
+        <div class ="ingredients"> 
         <ul>
           <li>
             {{item.strIngredient1}}
@@ -48,8 +49,8 @@
             {{item.strIngredient24}}
             {{item.strIngredient25}}
           </li>
-          <!--make list items to add ingredients {{item.strIngredient1}}-->
         </ul>
+        </div>
         <p>{{item.strInstructions}}</p>
         <h3>link to Youtube</h3>
       </li>
@@ -64,6 +65,8 @@
       <li v-for="(error, index) of errors" :key="index">{{error.message}}</li>
     </ul>
   </div>
+
+  
 </template>
 
 <script>
@@ -92,17 +95,18 @@ export default {
       })
       .then(response => {
         this.results = response.data.meals;
+        //commented out the loop that wasn't working..
         // console.log(this.results);
         // meal["ingredient"] = [];
-        for (let meal of this.results) {
-          meal["ingredient"] = []
-          for (let i = 1; i <= 20; i++) {
-            let ingredientVar = "strIngredient${i}";
-            if (!meal[ingredientVar]) {
-              meal.ingredients.push(meal[ingredientVar]);
-            }
-          }
-        }
+        // for (let meal of this.results) {
+        //   meal["ingredient"] = []
+        //   for (let i = 1; i <= 20; i++) {
+        //     let ingredientVar = "strIngredient${i}";
+        //     if (!meal[ingredientVar]) {
+        //       meal.ingredients.push(meal[ingredientVar]);
+        //     }
+        //   }
+        // }
         console.log(this.results);
       })
       .catch(error => {

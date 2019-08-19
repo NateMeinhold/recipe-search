@@ -105,10 +105,11 @@ a {
 
 .results{
   margin: 0 50px;
+   /* background-image: url('/assets/paperTiny.jpg'); */
 }
 
 .card{
-  background-image: url('paperTiny: NaNj;');
+  background-image: url('/assets/paperTiny.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
