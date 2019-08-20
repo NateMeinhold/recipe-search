@@ -2,7 +2,7 @@
   <div class="hello">
     <h2>Recipe Reveal</h2>
     <p>
-      <router-link to="/">Home</router-link>
+      <router-link to="/">Something Else?</router-link>
     </p>
 
     <form v-on:submit.prevent="findMeal">

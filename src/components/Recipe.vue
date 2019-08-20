@@ -3,7 +3,9 @@
 
        <h2>Recipe Search</h2>  
      <p>
-       <router-link to="/reveal">What's for dinner?</router-link>
+      <h4> Instructions:</h4>
+      <h5>this is where the instructions will go </h5> 
+       <!-- <router-link to="/reveal">What's for dinner?</router-link> -->
        </P>
        
     <form v-on:submit.prevent="findRecipe">
@@ -31,6 +33,7 @@
     <ul class="errors" v-if="errors && errors.length > 0">
       <li v-for="(error, index) of errors" :key="index">
         {{error.message}}
+        
       </li>
     </ul>
     </section>
