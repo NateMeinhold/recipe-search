@@ -3,14 +3,17 @@
 
        <h2>Recipe Search</h2>  
      <p>
-      <h4> Instructions:</h4>
-      <h5>this is where the instructions will go </h5> 
+      <!-- <h4> Instructions:</h4> -->
+      <h4>Pick an ingredient and type it in, let's find something good! </h4> 
        <!-- <router-link to="/reveal">What's for dinner?</router-link> -->
-       </P>
+       </p>
        
     <form v-on:submit.prevent="findRecipe">
-      <p>Find recipes related to: <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
+      <p> <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
     </form>
+     <!-- <p>
+      <h4>Tap the button to learn how to make it! </h4> 
+       </p> -->
     <section class="results">
     <ul class="recipeCards" v-if="results && results.length > 0">
       
@@ -28,21 +31,24 @@
     <div class="no-results" v-else-if="results && results.length === 0">
       <h2>No Recipes Found</h2>
       <p>Let's look for somthing else</p>
-    </div>
-<!--Need to ask about error message, it's not loading for some reason -->
+    <!-- </div> -->
+<!--I think I'm not calling this right...need to do more research-->
     <ul class="errors" v-if="errors && errors.length > 0">
       <li v-for="(error, index) of errors" :key="index">
         {{error.message}}
         
       </li>
     </ul>
+    </div>
     </section>
+    <!-- <h4>Tap the button to learn how to make it! </h4>  -->
   </div>
   
 </template>
 
 <script>
  import axios from 'axios'
+
 
  export default {
       name: 'Recipe',
@@ -85,7 +91,7 @@ h3 {
 }
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 5;
 }
 li {
   display: inline-block;
@@ -100,10 +106,8 @@ a {
   margin: 0 auto;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
+  grid-auto-rows: minmax(10 rem, auto);
   justify-content: center;
-  /* justify-items: center;  need to figure out how to center*/
-
 }
 
 .results{
@@ -112,9 +116,10 @@ a {
 }
 
 .card{
-  background-image: url('/assets/paperTiny.jpg');
+  background-image: url("../assets/wallTiny.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-color: #42b983
 }
 
 </style>

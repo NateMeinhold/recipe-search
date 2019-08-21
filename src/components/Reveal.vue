@@ -1,77 +1,92 @@
 <template>
+<body>
   <div class="hello">
-    <h2>Recipe Reveal</h2>
+    <!-- <h2>Recipe Reveal</h2>
     <p>
       <router-link to="/">Something Else?</router-link>
-    </p>
+    </p>-->
 
     <form v-on:submit.prevent="findMeal">
       <!-- <p>
         Nothing here
         <input type="text" v-model="ingredient" />
         <button type="submit">Search</button>
-      </p> -->
+      </p>-->
     </form>
-
+<!-- need to get everything outside of this large UL -->
     <ul class="Instructions" v-if="results && results.length > 0">
       <li class="card" v-for="(item, index) of results" :key="index">
-        <h1>{{item.strMeal}}</h1>
-        <h3>{{item.strCategory}} - {{item.strArea}}</h3>
-        <div id="thumbnail">
-          <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200" />
-        </div>
-        <div class ="ingredients"> 
-        <ul>
-          <li>
-            {{item.strIngredient1}}
-            {{item.strIngredient2}}
-            {{item.strIngredient3}}
-            {{item.strIngredient4}}
-            {{item.strIngredient5}}
-            {{item.strIngredient6}}
-            {{item.strIngredient7}}
-            {{item.strIngredient8}}
-            {{item.strIngredient9}}
-            {{item.strIngredient10}}
-            {{item.strIngredient11}}
-            {{item.strIngredient12}}
-            {{item.strIngredient13}}
-            {{item.strIngredient14}}
-            {{item.strIngredient15}}
-            {{item.strIngredient16}}
-            {{item.strIngredient17}}
-            {{item.strIngredient18}}
-            {{item.strIngredient19}}
-            {{item.strIngredient20}}
-            {{item.strIngredient21}}
-            {{item.strIngredient22}}
-            {{item.strIngredient23}}
-            {{item.strIngredient24}}
-            {{item.strIngredient25}}
-          </li>
-        </ul>
-        </div>
-        <p>{{item.strInstructions}}</p>
-        <h3>link to Youtube</h3>
+        <header>
+          <h1>{{item.strMeal}}</h1>
+          <h3>{{item.strCategory}} - {{item.strArea}}</h3>
+        </header>
+
+        <aside>
+          <div id="thumbnail">
+            <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200" />
+          </div>
+        </aside>
+
+        <sidebar>
+          <div class="ingredients">
+            <ul>
+              <li>
+                {{item.strIngredient1}}
+                {{item.strIngredient2}}
+                {{item.strIngredient3}}
+                {{item.strIngredient4}}
+                {{item.strIngredient5}}
+                {{item.strIngredient6}}
+                {{item.strIngredient7}}
+                {{item.strIngredient8}}
+                {{item.strIngredient9}}
+                {{item.strIngredient10}}
+                {{item.strIngredient11}}
+                {{item.strIngredient12}}
+                {{item.strIngredient13}}
+                {{item.strIngredient14}}
+                {{item.strIngredient15}}
+                {{item.strIngredient16}}
+                {{item.strIngredient17}}
+                {{item.strIngredient18}}
+                {{item.strIngredient19}}
+                {{item.strIngredient20}}
+                {{item.strIngredient21}}
+                {{item.strIngredient22}}
+                {{item.strIngredient23}}
+                {{item.strIngredient24}}
+                {{item.strIngredient25}}
+              </li>
+            </ul>
+          </div>
+        </sidebar>
+
+        <article>
+          <p>{{item.strInstructions}}</p>
+        </article>
       </li>
     </ul>
 
-    <div class="no-results" v-else-if="results && results.length === 0">
+    <!-- Old code from the Recipe vue can delete, will do while cleaning-->
+    <!-- <div class="no-results" v-else-if="results && results.length === 0">
       <h2>No Recipes Found</h2>
       <p>Let's look for somthing else</p>
     </div>
 
     <ul class="errors" v-if="errors && errors.length > 0">
       <li v-for="(error, index) of errors" :key="index">{{error.message}}</li>
-    </ul>
+    </ul>-->
   </div>
-
-  
+  <footer>
+    <h3>link to Youtube need to loop in</h3>
+    <router-link to="/">Something Else?</router-link>
+  </footer>
+</body>
 </template>
 
+
+
 <script>
-
-
 import axios from "axios";
 
 export default {
@@ -122,7 +137,7 @@ h3 {
   margin: 40px 0 0;
 }
 ul {
-  list-style-type: none;
+  /* list-style-type: none; */
   padding: 0;
 }
 li {
@@ -132,4 +147,47 @@ li {
 a {
   color: #42b983;
 }
+.ingredients {
+  background-color: bisque;
+}
+
+/* header {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+sidebar {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+footer {
+  grid-column-start: 2;
+  grid-column-end: 3;
+} */
+
+/* body {
+  display: grid;
+  grid-gap: 1em 1ex;
+  grid-template-areas:
+    'header header '
+    'sidebar   main'
+    'footer main ';
+  grid-template-columns: 1fr 20ch;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+article {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+} */
 </style>
