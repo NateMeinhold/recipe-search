@@ -35,5 +35,6 @@ body{
 img {
   max-width: 100%;
   height: auto;
+  padding-bottom: 60 rem;
 }
 </style>
