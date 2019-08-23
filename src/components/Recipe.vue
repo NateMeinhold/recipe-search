@@ -122,4 +122,11 @@ a {
   background-color: #42b983
 }
 
+#thumbnail{
+  /* border-radius: 50%; */
+  
+
+}
+
+
 </style>

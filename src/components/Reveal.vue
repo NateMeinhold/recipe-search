@@ -20,6 +20,7 @@
           <h1>{{item.strMeal}}</h1>
           <h3>{{item.strCategory}} - {{item.strArea}}</h3>
         </header>
+        <!-- </ul> -->
 
         <aside>
           <div id="thumbnail">

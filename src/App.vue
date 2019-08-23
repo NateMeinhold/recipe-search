@@ -32,4 +32,8 @@ body{
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 </style>
