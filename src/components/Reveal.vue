@@ -14,13 +14,14 @@
       </p>-->
     </form>
 <!-- need to get everything outside of this large UL -->
-    <ul class="Instructions" v-if="results && results.length > 0">
+    <ul class="Instructions" v-if="results && results.length > 0"> <!--Could it be because I am binding to the list items here...should i instead be making a container?-->
       <li class="card" v-for="(item, index) of results" :key="index">
         <header>
           <h1>{{item.strMeal}}</h1>
           <h3>{{item.strCategory}} - {{item.strArea}}</h3>
         </header>
         <!-- </ul> -->
+        <!-- </li> I can close off the Header list here but I lose all my data in the process-->
 
         <aside>
           <div id="thumbnail">
@@ -67,6 +68,8 @@
         </article>
       </li>
     </ul>
+
+     <p>{{item.strInstructions}}</p>
 
     <!-- Old code from the Recipe vue can delete, will do while cleaning-->
     <!-- <div class="no-results" v-else-if="results && results.length === 0">
