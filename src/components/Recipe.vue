@@ -2,11 +2,11 @@
   <div class="hello">
 
        <h2>Recipe Search</h2>  
-     <p>
+     <!-- <p> -->
       <!-- <h4> Instructions:</h4> -->
       <h4>Pick an ingredient and type it in, let's find something good! </h4> 
        <!-- <router-link to="/reveal">What's for dinner?</router-link> -->
-       </p>
+       <!-- </p> -->
        
     <form v-on:submit.prevent="findRecipe">
       <p> <input type="text" v-model="ingredient"> <button type="submit">Search</button></p>
@@ -122,11 +122,11 @@ a {
   background-color: #42b983
 }
 
-#thumbnail{
-  /* border-radius: 50%; */
+/* #thumbnail{
+  border-radius: 50%;
   
 
-}
+} */
 
 
 </style>

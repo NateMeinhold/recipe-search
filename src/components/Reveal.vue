@@ -62,6 +62,7 @@
             </ul>
           </div>
         </sidebar>
+        
 
         <article>
           <p>{{item.strInstructions}}</p>
