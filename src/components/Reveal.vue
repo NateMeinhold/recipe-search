@@ -10,6 +10,7 @@
       </p>-->
     </form>
 <!-- need to get everything outside of this large UL -->
+    <!-- <container> </container> -->
     <ul class="Instructions" v-if="results && results.length > 0"> <!--Could it be because I am binding to the list items here...should i instead be making a container?-->
       <li class="card" v-for="(item, index) of results" :key="index">
         <header>
