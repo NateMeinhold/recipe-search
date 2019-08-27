@@ -61,9 +61,7 @@
    }, 
    methods: {
      getMeal: function(item) {
-       //when debuging {item} was recorded as "observer "
        this.$router.push({name: "reveal", params: {item}})
-       //I thought that the issue might've been in the push but changing item to item.srMeal didn't work
      },
    findRecipe: function() {
      axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {

@@ -1,11 +1,7 @@
 <template>
 <body>
   <div class="hello">
-    <!-- <h2>Recipe Reveal</h2>
-    <p>
-      <router-link to="/">Something Else?</router-link>
-    </p>-->
-
+  
     <form v-on:submit.prevent="findMeal">
       <!-- <p>
         Nothing here
@@ -71,16 +67,6 @@
     </ul>
 
      <p>{{item.strInstructions}}</p>
-
-    <!-- Old code from the Recipe vue can delete, will do while cleaning-->
-    <!-- <div class="no-results" v-else-if="results && results.length === 0">
-      <h2>No Recipes Found</h2>
-      <p>Let's look for somthing else</p>
-    </div>
-
-    <ul class="errors" v-if="errors && errors.length > 0">
-      <li v-for="(error, index) of errors" :key="index">{{error.message}}</li>
-    </ul>-->
   </div>
   <footer>
     <h3>link to Youtube need to loop in</h3>
