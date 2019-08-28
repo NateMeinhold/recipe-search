@@ -10,15 +10,12 @@
       </p>-->
     </form>
 <!-- need to get everything outside of this large UL -->
-    <!-- <container> </container> -->
-    <ul class="Instructions" v-if="results && results.length > 0"> <!--Could it be because I am binding to the list items here...should i instead be making a container?-->
-      <li class="card" v-for="(item, index) of results" :key="index">
-        <header>
+    <container class="instructions"  v-for="(item, index) of results" :key="index">
+      
+      <header>
           <h1>{{item.strMeal}}</h1>
           <h3>{{item.strCategory}} - {{item.strArea}}</h3>
         </header>
-        <!-- </ul> -->
-        <!-- </li> I can close off the Header list here but I lose all my data in the process-->
 
         <aside>
           <div id="thumbnail">
@@ -26,7 +23,7 @@
           </div>
         </aside>
 
-        <sidebar>
+         <sidebar>
           <div class="ingredients">
             <ul>
               <li>
@@ -59,20 +56,85 @@
             </ul>
           </div>
         </sidebar>
-        
 
-        <article>
+         <main>
           <p>{{item.strInstructions}}</p>
-        </article>
-      </li>
-    </ul>
-
-     <p>{{item.strInstructions}}</p>
-  </div>
-  <footer>
-    <h3>link to Youtube need to loop in</h3>
+        </main>
+      <!-- </li> -->
+      <footer>
+    <h3>https://www.youtube.com/watch?v=BFhIQJfOKuo</h3>
     <router-link to="/">Something Else?</router-link>
   </footer>
+      
+      </container>
+      
+      <!-- Doing some work with the old code, need to preserve in place -->
+    <!-- <ul class="Instructions" v-if="results && results.length > 0">  -->
+      
+      <!-- <li class="card" v-for="(item, index) of results" :key="index">
+        <header>
+          <h1>{{item.strMeal}}</h1>
+          <h3>{{item.strCategory}} - {{item.strArea}}</h3>
+        </header> -->
+
+        <!-- </ul> -->
+        <!-- </li> I can close off the Header list here but I lose all my data in the process-->
+
+        <!-- <aside>
+          <div id="thumbnail">
+            <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200" />
+          </div>
+        </aside> -->
+
+        <!-- <sidebar>
+          <div class="ingredients">
+            <ul>
+              <li>
+                {{item.strIngredient1}}
+                {{item.strIngredient2}}
+                {{item.strIngredient3}}
+                {{item.strIngredient4}}
+                {{item.strIngredient5}}
+                {{item.strIngredient6}}
+                {{item.strIngredient7}}
+                {{item.strIngredient8}}
+                {{item.strIngredient9}}
+                {{item.strIngredient10}}
+                {{item.strIngredient11}}
+                {{item.strIngredient12}}
+                {{item.strIngredient13}}
+                {{item.strIngredient14}}
+                {{item.strIngredient15}}
+                {{item.strIngredient16}}
+                {{item.strIngredient17}}
+                {{item.strIngredient18}}
+                {{item.strIngredient19}}
+                {{item.strIngredient20}}
+                {{item.strIngredient21}}
+                {{item.strIngredient22}}
+                {{item.strIngredient23}}
+                {{item.strIngredient24}}
+                {{item.strIngredient25}}
+              </li>
+            </ul>
+          </div>
+        </sidebar> -->
+        
+
+        <!-- <article>
+          <p>{{item.strInstructions}}</p>
+        </article>
+      </li> -->
+    <!-- </ul> -->
+
+     <!-- <p>{{item.strInstructions}}</p> -->
+  <!-- </div> -->
+  <!-- <footer>
+    <h3>link to Youtube need to loop in</h3>
+    <router-link to="/">Something Else?</router-link>
+  </footer> -->
+
+  </div>
 </body>
 </template>
 
@@ -143,6 +205,14 @@ a {
   background-color: bisque;
 }
 
+header{
+  background-color: #42b983;
+  /* background-image: url("../assets/paperTiny.jpg"); */
+  background-image: url("../assets/wallTiny.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 /* header {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -156,7 +226,7 @@ footer {
   grid-column-end: 3;
 } */
 
-/* body {
+body {
   display: grid;
   grid-gap: 1em 1ex;
   grid-template-areas:
@@ -167,7 +237,7 @@ footer {
   min-height: 100vh;
 }
 
-header {
+/* header {
   grid-area: header;
 }
 

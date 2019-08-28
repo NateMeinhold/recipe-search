@@ -63,8 +63,15 @@
      getMeal: function(item) {
        this.$router.push({name: "reveal", params: {item}})
      },
+
+     
    findRecipe: function() {
-     axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
+     //If I can make it work without the proxy cut "https://cors-any..." and the "proxyUrl +"
+
+    let proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    // axios.get('https://www.themealdb.com/api/json/v1/1/filter.php', {
+
+     axios.get(proxyUrl + 'https://www.themealdb.com/api/json/v1/1/filter.php', {
        params: {
         i: this.ingredient
        }
