@@ -13,56 +13,95 @@
     <container class="instructions"  v-for="(item, index) of results" :key="index">
       
       <header>
-          <h1>{{item.strMeal}}</h1>
+          <h1>{{item.strMeal}} </h1>
           <h3>{{item.strCategory}} - {{item.strArea}}</h3>
         </header>
 
         <aside>
-          <div id="thumbnail">
-            <img :src="item.strMealThumb" :alt="item.strMeal" height="200" width="200" />
+          <div class="photo">
+            <!-- height="200" width="200" -->
+            <img :src="item.strMealThumb" :alt="item.strMeal" /> 
           </div>
         </aside>
 
          <sidebar>
           <div class="ingredients">
+            <h4>What you'll need</h4>
             <ul>
               <li>
                 {{item.strIngredient1}}
+              </li>
+              <li>
                 {{item.strIngredient2}}
+              </li>
+              <li>
                 {{item.strIngredient3}}
+               </li>
+              <li>
                 {{item.strIngredient4}}
+                </li>
+              <li>
                 {{item.strIngredient5}}
+               </li>
+              <li>
                 {{item.strIngredient6}}
+                </li>
+              <li>
                 {{item.strIngredient7}}
+                </li>
+              <li>
                 {{item.strIngredient8}}
+                </li>
+              <li>
                 {{item.strIngredient9}}
+                </li>
+              <li>
                 {{item.strIngredient10}}
+                </li>
+              <li>
                 {{item.strIngredient11}}
+                </li>
+              <li>
                 {{item.strIngredient12}}
+                </li>
+              <li>
                 {{item.strIngredient13}}
+                </li>
+              <li>
                 {{item.strIngredient14}}
+                </li>
+              <li>
                 {{item.strIngredient15}}
+                </li>
+              <li>
                 {{item.strIngredient16}}
+                </li>
+              <li>
                 {{item.strIngredient17}}
+                </li>
+              <li>
                 {{item.strIngredient18}}
+                </li>
+              <li>
                 {{item.strIngredient19}}
+                </li>
+              <li>
                 {{item.strIngredient20}}
+                </li>
+              <li>
                 {{item.strIngredient21}}
-                {{item.strIngredient22}}
-                {{item.strIngredient23}}
-                {{item.strIngredient24}}
-                {{item.strIngredient25}}
               </li>
             </ul>
           </div>
         </sidebar>
 
          <main>
+           <h4>How to make it</h4>
           <p>{{item.strInstructions}}</p>
         </main>
       <!-- </li> -->
       <footer>
-    <h3>https://www.youtube.com/watch?v=BFhIQJfOKuo</h3>
+    <h3>https://www.youtube.com/watch?v=:src="item.strMealThumb" :href="strYoutube"{{strYoutube}}</h3>
     <router-link to="/">Something Else?</router-link>
   </footer>
       
@@ -185,13 +224,15 @@ export default {
 };
 </script>
 
+
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
+/* h3 {
   margin: 40px 0 0;
 }
 ul {
-  /* list-style-type: none; */
+  list-style-type: none;
   padding: 0;
 }
 li {
@@ -200,19 +241,60 @@ li {
 }
 a {
   color: #42b983;
-}
-.ingredients {
+} */
+/* .ingredients {
   background-color: bisque;
+} */
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
+li {
+  /* display: inline-block; */
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+} 
 
 header{
-  background-color: #42b983;
+  /* background-color: #42b983; */
   /* background-image: url("../assets/paperTiny.jpg"); */
+  background-image: url("../assets/wallTiny.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  float: center;
+}
+
+.photo{
+ max-width: 30%;
+  height: auto;
+  padding-bottom: 60 rem;
+  float: right;
+  /* clear: left; */
+   background-image: url("../assets/wallTiny.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.ingredients{
   background-image: url("../assets/wallTiny.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
+main{
+   background-image: url("../assets/wallTiny.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+footer{
+   background-image: url("../assets/wallTiny.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
 /* header {
   grid-column-start: 1;
   grid-column-end: 3;
@@ -226,16 +308,17 @@ footer {
   grid-column-end: 3;
 } */
 
-body {
+/* body {
   display: grid;
   grid-gap: 1em 1ex;
   grid-template-areas:
-    'header header '
-    'sidebar   main'
+    'header aside '
+    'sidebar  aside'
     'footer main ';
   grid-template-columns: 1fr 20ch;
   min-height: 100vh;
-}
+   background-color: #42b983;
+} */
 
 /* header {
   grid-area: header;
