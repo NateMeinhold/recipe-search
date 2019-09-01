@@ -101,7 +101,7 @@
         </main>
       <!-- </li> -->
       <footer>
-    <h3>https://www.youtube.com/watch?v=:src="item.strMealThumb" :href="strYoutube"{{strYoutube}}</h3>
+    <!-- <h3>https://www.youtube.com/watch?v=:src="item.strMealThumb" :href="strYoutube"{{strYoutube}}</h3> -->
     <router-link to="/">Something Else?</router-link>
   </footer>
       
